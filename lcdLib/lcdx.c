@@ -20,13 +20,20 @@ main()
 
   //fillRectangle(30,30, 60, 60, COLOR_ORANGE);
 
-  for (j=0; j<20; j++){
-    drawPixel(j, j, COLOR_BLACK);
-  }
-  for (j=0;j<21; j++){
-    drawPixel(0,j,COLOR_BLACK);
-  }
-  for(j=0; j<20; j++){
-    drawPixel(j, 20, COLOR_BLACK);
+  /* for (j=0; j<40; j++){
+    drawPixel(0,j,COLOR_BLACK); //vertical line
+    drawPixel(j/2,40, COLOR_BLACK); //horizontal line
+    drawPixel(j/2,j,COLOR_BLACK); //diagnal line
+    }*/
+
+  for (j=0; j<=15; j+=3){
+    char colLeft = 15-j;
+    char colRight = 15;
+    for(char i=colLeft; i<=colRight; i++){
+      drawPixel(20+i,30+j,COLOR_BLACK);
+      drawPixel(20-i,30+j,COLOR_BLACK);
+      drawPixel(20+i,30-j,COLOR_BLACK);
+      drawPixel(20-i,30-j,COLOR_BLACK);
+    }
   }
 }
