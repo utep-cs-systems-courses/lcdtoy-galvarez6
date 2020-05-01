@@ -20,7 +20,7 @@ void main(void)
   or_sr(0x18);  // CPU off, GIE on
   // fillRectangle(30, 30, 60, 60, COLOR_BLUE);
   // drawHouse();
-
+  
   for(;;) {
     while(!reddrawScreen){
       P1OUT &= ~GREEN_LED;

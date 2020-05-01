@@ -47,9 +47,9 @@ switch_interrupt_handler()
   
   if(btn1down){
     switch(soundState){
-    case First: drawHouse(); buzzer_set_period(0); soundState = Second; break;
-    case Second: clearScreen(COLOR_GREEN); buzzer_set_period(1000); soundState = Third; break;
-    case Third: buzzer_set_period(5000); soundState = First; break;
+    case First: clearScreen(COLOR_GREEN); buzzer_set_period(0); soundState = Second; break;
+    case Second: drawHouse(); buzzer_set_period(1000); soundState = Third; break;
+    case Third: drawRoof(); buzzer_set_period(5000); soundState = First; break;
     }
   }
   if(btn2down){
