@@ -13,6 +13,7 @@
  */
 void drawPixel(u_char col, u_char row, u_int colorBGR);
 void drawHouse();
+void drawRoof();
 /** Fill rectangle
  *
  *  \param colMin Column start

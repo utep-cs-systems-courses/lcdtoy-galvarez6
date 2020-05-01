@@ -54,7 +54,15 @@ void drawHouse()
   }
 }
       
-
+void drawRoof()
+{
+  for(int i=0; i<=10; i++){
+    for(int j=0; j<=i; j++){
+      drawPixel(16-j+23, 30+i,COLOR_PINK);
+      drawPixel(17+j+23, 30+i,COLOR_BLUE);
+    }
+  }
+}
 
 
 
