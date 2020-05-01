@@ -3,12 +3,14 @@
 #include "buzzer.h"
 #include "notes.h"
 #include "led.h"
-
+#include "lcdutils.h"
+#include "lcddraw.h"
 
 char switch_state_down, switch_state_changed; /* effectively boolean */
 int song_1[]={F4, A4, B4, F4, A4, B4, F4, A4, B4, E4, D4, C4, B4, C4, G4, E4, D4, D4, E4, G4};
 int song_2[]={B4, E4, G4, B4, E4, G4, E4, D4, Dflat, A4, G4, A4, B4, E4, D4, G4, E4};
 int assembleAdvance = 1;
+char reddrawScreen=0;
 
 static char 
 switch_update_interrupt_sense()
@@ -45,8 +47,8 @@ switch_interrupt_handler()
   
   if(btn1down){
     switch(soundState){
-    case First: buzzer_set_period(0); soundState = Second; break;
-    case Second: buzzer_set_period(1000); soundState = Third; break;
+    case First: drawHouse(); buzzer_set_period(0); soundState = Second; break;
+    case Second: clearScreen(COLOR_GREEN); buzzer_set_period(1000); soundState = Third; break;
     case Third: buzzer_set_period(5000); soundState = First; break;
     }
   }

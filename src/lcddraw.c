@@ -37,6 +37,27 @@ void fillRectangle(u_char colMin, u_char rowMin, u_char width, u_char height,
   }
 }
 
+void drawHouse()
+{
+  int rightOff = 30;
+  int downOff = 40;
+  for(int c=0; c<=20; c++){
+    for(int j=0; j<=10; j++){
+      drawPixel(rightOff + c, downOff+j, COLOR_BLACK);
+    }
+  }
+  for(int c=0; c<=8; c++){
+    for(int j=0; j<=5; j++){
+      drawPixel(rightOff+c, downOff + 10 + j, COLOR_BLACK);
+      drawPixel(rightOff+12+c, downOff + 10 + j, COLOR_BLACK);
+    }
+  }
+}
+      
+
+
+
+
 /** Clear screen (fill with color)
  *  
  *  \param colorBGR The color to fill screen

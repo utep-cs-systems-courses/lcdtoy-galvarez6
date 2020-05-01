@@ -1,8 +1,8 @@
 #include <msp430.h>
 #include <sr.h>
 #include "p2switches.h"
+#define GREEN_LED BIT6
 #define RED_LED BIT0
-
 int
 main()
 {
